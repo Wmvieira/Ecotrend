@@ -3,6 +3,7 @@
  * for Docker builds.
  */
 await import("./src/env.js");
+import WithPWA from "next-pwa";
 
 /** @type {import("next").NextConfig} */
 const config = {
@@ -19,4 +20,13 @@ const config = {
   },
 };
 
-export default config;
+/** @type {import('next').NextConfig} */
+let withPWA = WithPWA({
+  dest: "public",
+  register: true,
+  skipWaiting: true,
+});
+
+withPWA = { withPWA, ...config };
+
+export default withPWA;
