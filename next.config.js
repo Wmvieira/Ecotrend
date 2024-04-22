@@ -25,8 +25,8 @@ let withPWA = WithPWA({
   dest: "public",
   register: true,
   skipWaiting: true,
+  disable: process.env.NODE_ENV === "development",
+  ...config,
 });
-
-withPWA = { withPWA, ...config };
 
 export default withPWA;
