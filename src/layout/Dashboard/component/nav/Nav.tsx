@@ -1,5 +1,5 @@
 import { PiHouse } from "react-icons/pi";
-import NavItem from "./items/navItem";
+import NavItem from "./items/NavItem";
 
 export default function Nav() {
   return (
