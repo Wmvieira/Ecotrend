@@ -1,4 +1,4 @@
-import DashboardLayout from "~/layout/Dashboard/DashboardLayout";
+import DashboardLayout from "~/layout/dashboard/DashboardLayout";
 
 Home.getLayout = (page: never) => <DashboardLayout>{page}</DashboardLayout>;
 
