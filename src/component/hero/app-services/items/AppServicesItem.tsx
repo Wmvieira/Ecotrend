@@ -17,7 +17,7 @@ interface ItemCtxProps extends ItemProps {
 export const ItemCtx = createContext<ItemCtxProps | undefined>(undefined);
 
 export default function Item({ icon, name, description }: ItemProps) {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const { isOpen, onOpenChange } = useDisclosure();
 
   return (
     <div className="flex flex-col justify-center gap-1 p-1 text-secondary-foreground">
