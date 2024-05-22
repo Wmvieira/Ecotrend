@@ -2,7 +2,7 @@ import AppCommunity from "~/component/hero/app-community/AppCommunity";
 import AppInfo from "~/component/hero/app-info/AppInfo";
 import AppPolicy from "~/component/hero/app-policy/AppPolicy";
 import AppServices from "~/component/hero/app-services/AppServices";
-import HeroLayout from "~/layout/hero/HeroLayout";
+import HeroLayout from "~/layout/hero-layout/HeroLayout";
 
 Hero.getLayout = (page: never) => <HeroLayout>{page}</HeroLayout>;
 
