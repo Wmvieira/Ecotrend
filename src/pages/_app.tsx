@@ -1,13 +1,14 @@
 import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
-import { Inter } from "next/font/google";
+import { Work_Sans } from "next/font/google";
 
 import { api } from "~/utils/api";
 
 import "~/styles/globals.css";
+import { NextUIProvider } from "@nextui-org/react";
 
-const inter = Inter({
+const work = Work_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
@@ -20,16 +21,16 @@ const MyApp: AppType<{ session: Session | null }> = ({
     //@ts-expect-error Page dynamic layout
     (Component?.getLayout as unknown) ?? ((page: unknown) => page);
   return (
-    <SessionProvider session={session}>
-      <main
-        className={`font-sans ${inter.variable} w-scree bg-primary-background text-primary-foreground h-screen`}
-      >
-        {
-          //@ts-expect-error Page dynamic layout
-          getLayout(<Component {...pageProps} />)
-        }
-      </main>
-    </SessionProvider>
+    <NextUIProvider>
+      <SessionProvider session={session}>
+        <main className={`font-sans ${work.variable} w-scree h-screen`}>
+          {
+            //@ts-expect-error Page dynamic layout
+            getLayout(<Component {...pageProps} />)
+          }
+        </main>
+      </SessionProvider>
+    </NextUIProvider>
   );
 };
 
